@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astra Finance Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <div class="brand">
+            <div class="brand-icon">A</div>
+            <div>
+              <p class="eyebrow">Smart finance</p>
+              <h1>Astra</h1>
+            </div>
+          </div>
+
+          <nav class="nav-links">
+            <a class="active" href="#">Overview</a>
+            <a href="#">Bills</a>
+            <a href="#">Savings</a>
+            <a href="#">Reports</a>
+          </nav>
+        </div>
+
+        <div class="card tip-card">
+          <p class="eyebrow">Smart tip</p>
+          <h3>Keep 20% aside for savings.</h3>
+          <p>Automated reminders help you stay ahead of every due date.</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Monthly snapshot</p>
+            <h2>Welcome back, your money is on track.</h2>
+          </div>
+          <div class="chip">Philippine tax ready</div>
+        </header>
+
+        <section class="hero-grid">
+          <div class="card hero-card">
+            <div class="hero-head">
+              <div>
+                <p class="eyebrow">Income</p>
+                <h3>Monthly salary</h3>
+              </div>
+              <div class="pill">Auto-calc</div>
+            </div>
+
+            <label class="input-label" for="salary">Enter your monthly salary</label>
+            <div class="salary-row">
+              <span class="currency">₱</span>
+              <input id="salary" type="number" min="0" step="1000" value="50000" />
+            </div>
+
+            <div class="stats-grid">
+              <div>
+                <p class="muted">Annual salary</p>
+                <h4 id="annualSalary">₱600,000.00</h4>
+              </div>
+              <div>
+                <p class="muted">Estimated monthly tax</p>
+                <h4 id="monthlyTax">₱0.00</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card summary-card">
+            <p class="eyebrow">Remaining balance</p>
+            <h3 id="remainingBudget">₱0.00</h3>
+            <div class="meter">
+              <div id="meterFill"></div>
+            </div>
+            <div class="summary-row">
+              <span>Total bills</span>
+              <strong id="totalBills">₱0.00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Estimated annual tax</span>
+              <strong id="annualTax">₱0.00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Take-home estimate</span>
+              <strong id="takeHome">₱0.00</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="card bills-card">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Bills</p>
+                <h3>Manage everything in one place</h3>
+              </div>
+              <button id="addBillBtn" class="ghost-btn">+ Add bill</button>
+            </div>
+
+            <form id="billForm" class="bill-form">
+              <input id="billName" type="text" placeholder="Bill name" required />
+              <input id="billAmount" type="number" min="0" step="100" placeholder="Amount" required />
+              <button type="submit">Save</button>
+            </form>
+
+            <ul id="billList" class="bill-list"></ul>
+          </div>
+
+          <div class="card insights-card">
+            <p class="eyebrow">Insights</p>
+            <h3>What this month looks like</h3>
+            <div class="insight-item">
+              <span>Salary after tax</span>
+              <strong id="salaryAfterTax">₱0.00</strong>
+            </div>
+            <div class="insight-item">
+              <span>Bills coverage</span>
+              <strong id="billCoverage">0%</strong>
+            </div>
+            <div class="insight-item">
+              <span>Suggested savings</span>
+              <strong id="suggestedSavings">₱0.00</strong>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
